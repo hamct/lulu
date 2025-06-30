@@ -11,7 +11,7 @@ jobs:
       - uses: actions/setup-java@v4
         with:
           java-version: '21'
-          distribution: 'openjdk'
+          distribution: 'microsoft'
 
       - name: ktlint
         run: mvn ktlint:check
