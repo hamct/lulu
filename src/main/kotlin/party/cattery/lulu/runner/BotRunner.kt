@@ -13,8 +13,8 @@ import org.springframework.stereotype.Component
 
 @Component
 class BotRunner(
-    val props: DiscordProperties,
-    val commandRegistrar: CommandRegistrar,
+    private val props: DiscordProperties,
+    private val commandRegistrar: CommandRegistrar,
 ) : ApplicationRunner {
 
     override fun run(args: ApplicationArguments) {

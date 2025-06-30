@@ -3,9 +3,19 @@ spring:
     name: lulu
   config:
     import: optional:file:.env[.properties]
+  datasource:
+    url: jdbc:postgresql://localhost:5432/${DB_NAME}
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+  flyway:
+    enabled: true
+
 discord:
   token: ${DISCORD_TOKEN}
-
-#logging:
-#  level:
-#    org.springframework.boot: DEBUG
