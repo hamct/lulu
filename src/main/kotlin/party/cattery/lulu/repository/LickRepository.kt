@@ -1,4 +1,4 @@
-package party.cattery.lulu
+package party.cattery.lulu.repository
 
 import party.cattery.lulu.entity.LickEntity
 
