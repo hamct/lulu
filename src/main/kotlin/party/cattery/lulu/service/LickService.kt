@@ -1,7 +1,7 @@
 package party.cattery.lulu.service
 
-import party.cattery.lulu.LickRepository
 import party.cattery.lulu.entity.LickEntity
+import party.cattery.lulu.repository.LickRepository
 
 import org.springframework.stereotype.Service
 
