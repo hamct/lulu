@@ -19,10 +19,13 @@ class CommandRegistrar(
                 }
             }
         }
+        registerDispatchHandler(kord)
+    }
 
+    private fun registerDispatchHandler(kord: Kord) {
+        val commandMap = commands.associateBy { it.name }
         kord.on<ChatInputCommandInteractionCreateEvent> {
-            val name = interaction.command.rootName
-            commands.find { it.name == name }?.execute(this)
+            commandMap[interaction.command.rootName]?.execute(this)
         }
     }
 }
