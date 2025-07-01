@@ -1,14 +1,15 @@
-package party.cattery.lulu.command.commands
+package party.cattery.lulu.command.slash
 
 import party.cattery.lulu.annotation.Command
-import party.cattery.lulu.command.SlashCommand
-import party.cattery.lulu.response.LickResponse
+import party.cattery.lulu.command.CommandScope
+import party.cattery.lulu.command.base.SlashCommand
+import party.cattery.lulu.presentation.LickResponse
 import party.cattery.lulu.service.LickService
 
-import dev.kord.core.behavior.interaction.response.DeferredPublicMessageInteractionResponseBehavior
+import dev.kord.core.behavior.interaction.response.DeferredMessageInteractionResponseBehavior
 import dev.kord.core.behavior.interaction.response.respond
 import dev.kord.core.event.interaction.ChatInputCommandInteractionCreateEvent
-import dev.kord.rest.builder.interaction.GlobalChatInputCreateBuilder
+import dev.kord.rest.builder.interaction.ChatInputCreateBuilder
 import dev.kord.rest.builder.interaction.user
 
 @Command
@@ -19,8 +20,9 @@ class LickCommand(
 
     override val name = "lick"
     override val description = "Lick a user"
+    override val scopes = setOf(CommandScope.GLOBAL)
 
-    override fun GlobalChatInputCreateBuilder.buildDefinition() {
+    override fun ChatInputCreateBuilder.buildDefinition() {
         user("lickee", "User to lick") {
             required = true
         }
@@ -28,7 +30,7 @@ class LickCommand(
 
     override suspend fun handle(
         event: ChatInputCommandInteractionCreateEvent,
-        ack: DeferredPublicMessageInteractionResponseBehavior,
+        ack: DeferredMessageInteractionResponseBehavior,
     ) {
         val interaction = event.interaction
 

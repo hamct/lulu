@@ -1,4 +1,4 @@
-package party.cattery.lulu.response
+package party.cattery.lulu.presentation
 
 import dev.kord.core.entity.User
 import dev.kord.core.entity.interaction.ChatInputCommandInteraction
