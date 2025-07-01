@@ -1,9 +1,5 @@
 package party.cattery.lulu.command
 
-import party.cattery.lulu.command.commands.message.MessageCommand
-import party.cattery.lulu.command.commands.slash.SlashCommand
-import party.cattery.lulu.command.commands.user.UserCommand
-
 import dev.kord.core.Kord
 import dev.kord.core.event.interaction.ChatInputCommandInteractionCreateEvent
 import dev.kord.core.event.interaction.MessageCommandInteractionCreateEvent

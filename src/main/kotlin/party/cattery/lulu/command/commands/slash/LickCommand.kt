@@ -2,6 +2,7 @@ package party.cattery.lulu.command.commands.slash
 
 import party.cattery.lulu.annotation.Command
 import party.cattery.lulu.command.CommandScope
+import party.cattery.lulu.command.SlashCommand
 import party.cattery.lulu.response.LickResponse
 import party.cattery.lulu.service.LickService
 

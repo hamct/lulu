@@ -2,6 +2,7 @@ package party.cattery.lulu.command.commands.message
 
 import party.cattery.lulu.annotation.Command
 import party.cattery.lulu.command.CommandScope
+import party.cattery.lulu.command.MessageCommand
 
 import dev.kord.core.behavior.interaction.response.DeferredMessageInteractionResponseBehavior
 import dev.kord.core.behavior.interaction.response.respond

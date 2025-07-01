@@ -3,7 +3,7 @@ package party.cattery.lulu.command
 import dev.kord.core.Kord
 import dev.kord.core.event.interaction.ApplicationCommandInteractionCreateEvent
 
-abstract class BaseCommand {
+sealed class BaseCommand {
     abstract val name: String
     abstract val description: String
     abstract val scopes: Set<CommandScope>

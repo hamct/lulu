@@ -1,7 +1,4 @@
-package party.cattery.lulu.command.commands.user
-
-import party.cattery.lulu.command.BaseCommand
-import party.cattery.lulu.command.CommandScope
+package party.cattery.lulu.command
 
 import dev.kord.core.Kord
 import dev.kord.core.behavior.interaction.response.DeferredMessageInteractionResponseBehavior
