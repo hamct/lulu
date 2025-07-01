@@ -20,7 +20,7 @@ abstract class MessageCommand : BaseCommand() {
         ack: DeferredMessageInteractionResponseBehavior,
     )
 
-    override suspend fun execute(event: ApplicationCommandInteractionCreateEvent) {
+    final override suspend fun execute(event: ApplicationCommandInteractionCreateEvent) {
         handle(event as MessageCommandInteractionCreateEvent, event.interaction.deferEphemeralResponse())
     }
 }
