@@ -1,4 +1,4 @@
-package party.cattery.lulu.command
+package party.cattery.lulu.command.base
 
 import dev.kord.core.Kord
 import dev.kord.core.behavior.interaction.response.DeferredMessageInteractionResponseBehavior

@@ -1,4 +1,6 @@
-package party.cattery.lulu.command
+package party.cattery.lulu.command.base
+
+import party.cattery.lulu.command.CommandScope
 
 import dev.kord.core.Kord
 import dev.kord.core.event.interaction.ApplicationCommandInteractionCreateEvent
