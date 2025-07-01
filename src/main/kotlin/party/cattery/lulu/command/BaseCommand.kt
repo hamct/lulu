@@ -11,6 +11,4 @@ abstract class BaseCommand {
     abstract suspend fun register(kord: Kord)
 
     abstract suspend fun execute(event: ApplicationCommandInteractionCreateEvent)
-
-    abstract fun matches(event: ApplicationCommandInteractionCreateEvent): Boolean
 }

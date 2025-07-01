@@ -16,15 +16,12 @@ abstract class UserCommand : BaseCommand() {
         }
     }
 
-    override fun matches(event: ApplicationCommandInteractionCreateEvent): Boolean =
-        event is UserCommandInteractionCreateEvent && event.interaction.invokedCommandName == name
-
-    override suspend fun execute(event: ApplicationCommandInteractionCreateEvent) {
-        handle(event as UserCommandInteractionCreateEvent, event.interaction.deferEphemeralResponse())
-    }
-
     protected abstract suspend fun handle(
         event: UserCommandInteractionCreateEvent,
         ack: DeferredMessageInteractionResponseBehavior,
     )
+
+    override suspend fun execute(event: ApplicationCommandInteractionCreateEvent) {
+        handle(event as UserCommandInteractionCreateEvent, event.interaction.deferEphemeralResponse())
+    }
 }

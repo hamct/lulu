@@ -16,17 +16,14 @@ abstract class SlashCommand : BaseCommand() {
         }
     }
 
-    override fun matches(event: ApplicationCommandInteractionCreateEvent): Boolean =
-        event is ChatInputCommandInteractionCreateEvent && name == event.interaction.command.rootName
-
-    override suspend fun execute(event: ApplicationCommandInteractionCreateEvent) {
-        handle(event as ChatInputCommandInteractionCreateEvent, event.interaction.deferPublicResponse())
-    }
-
     protected abstract suspend fun handle(
         event: ChatInputCommandInteractionCreateEvent,
         ack: DeferredMessageInteractionResponseBehavior,
     )
+
+    override suspend fun execute(event: ApplicationCommandInteractionCreateEvent) {
+        handle(event as ChatInputCommandInteractionCreateEvent, event.interaction.deferPublicResponse())
+    }
 
     open fun ChatInputCreateBuilder.buildDefinition() { }
 }

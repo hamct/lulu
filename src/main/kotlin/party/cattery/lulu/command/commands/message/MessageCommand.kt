@@ -16,15 +16,12 @@ abstract class MessageCommand : BaseCommand() {
         }
     }
 
-    override fun matches(event: ApplicationCommandInteractionCreateEvent): Boolean =
-        event is MessageCommandInteractionCreateEvent && event.interaction.invokedCommandName == name
-
-    override suspend fun execute(event: ApplicationCommandInteractionCreateEvent) {
-        handle(event as MessageCommandInteractionCreateEvent, event.interaction.deferEphemeralResponse())
-    }
-
     protected abstract suspend fun handle(
         event: MessageCommandInteractionCreateEvent,
         ack: DeferredMessageInteractionResponseBehavior,
     )
+
+    override suspend fun execute(event: ApplicationCommandInteractionCreateEvent) {
+        handle(event as MessageCommandInteractionCreateEvent, event.interaction.deferEphemeralResponse())
+    }
 }
