@@ -11,7 +11,7 @@ import dev.kord.rest.builder.interaction.ChatInputCreateBuilder
 abstract class SlashCommand : BaseCommand() {
 
     override suspend fun register(kord: Kord) {
-        kord.createGlobalChatInputCommand(name = name, description = description) {
+        kord.createGlobalChatInputCommand(name, description) {
             buildDefinition()
         }
     }

@@ -42,27 +42,3 @@ class CommandRegistrar(
         }
     }
 }
-
-/*
-TYPES:
-- GlobalChatInputCommandInteractionCreateEvent // dms
-- ChatInputCommandInteractionCreateEvent // guild
-- GuildUserCommandInteractionCreateEvent // guild sidebar
-- GuildMessageCommandInteractionCreateEvent // message in guild
-
-    CAN BE:
-    - public
-    - ephemeral
-
-Base cmd
-- name
-- description
-
-- GlobalChatInputCommandInteractionCreateEvent // dms
-- ChatInputCommandInteractionCreateEvent // guild
-    args
-
-- GuildUserCommandInteractionCreateEvent // guild sidebar
-- GuildMessageCommandInteractionCreateEvent // message in guild
-
- */
