@@ -12,7 +12,7 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.boot.runApplication
 
 @EnableConfigurationProperties(DiscordProperties::class)
-@SpringBootApplication(scanBasePackages = ["party.cattery.lulu"])
+@SpringBootApplication()
 class Application
 
 suspend fun main(args: Array<String>) {

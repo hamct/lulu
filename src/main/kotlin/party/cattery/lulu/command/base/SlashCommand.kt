@@ -19,7 +19,7 @@ abstract class SlashCommand : BaseCommand() {
         ack: DeferredMessageInteractionResponseBehavior,
     )
 
-    override suspend fun execute(event: ApplicationCommandInteractionCreateEvent) {
+    final override suspend fun execute(event: ApplicationCommandInteractionCreateEvent) {
         handle(event as ChatInputCommandInteractionCreateEvent, event.interaction.deferPublicResponse())
     }
 
