@@ -2,6 +2,7 @@ package party.cattery.lulu.command.message
 
 import party.cattery.lulu.annotation.Command
 import party.cattery.lulu.command.CommandScope
+import party.cattery.lulu.command.ResponseVisibility
 import party.cattery.lulu.command.base.MessageCommand
 
 import dev.kord.core.behavior.interaction.response.DeferredMessageInteractionResponseBehavior
@@ -13,6 +14,7 @@ class ShowSnowflakeCommand : MessageCommand() {
     override val name = "Show Snowflake"
     override val description = "Shows the user's snowflake."
     override val scopes = setOf(CommandScope.GLOBAL)
+    override val visibility = ResponseVisibility.EPHEMERAL
 
     override suspend fun handle(
         event: MessageCommandInteractionCreateEvent,
