@@ -2,7 +2,7 @@ name: build-push.yml
 
 on:
   push:
-    branches: [ main, fix-gha-yes ]
+    branches: [ main ]
 
 jobs:
   login:
@@ -24,4 +24,4 @@ jobs:
           tags: |
             ${{ vars.DOCKERHUB_USERNAME }}/hamct:lulu
             ${{ vars.DOCKERHUB_USERNAME }}/hamct:test
-            ${{ vars.DOCKERHUB_USERNAME }}/hamct:a${{ github.event.pull_request.base.sha }}
+            ${{ vars.DOCKERHUB_USERNAME }}/hamct:${{ github.event.pull_request.base.sha }}
