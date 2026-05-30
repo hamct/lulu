@@ -24,4 +24,4 @@ jobs:
           tags: |
             ${{ vars.DOCKERHUB_USERNAME }}/hamct:lulu
             ${{ vars.DOCKERHUB_USERNAME }}/hamct:prod
-            ${{ vars.DOCKERHUB_USERNAME }}/hamct:${{ github.event.pull_request.base.sha }}
+            ${{ vars.DOCKERHUB_USERNAME }}/hamct:${{ github.sha }}
