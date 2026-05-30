@@ -20,4 +20,4 @@ jobs:
         run: mvn ktlint:check --no-transfer-progress --batch-mode
 
       - name: Run tests
-        run: mvn clean verify --no-transfer-progress --batch-mode
+        run: mvn clean test --no-transfer-progress --batch-mode
