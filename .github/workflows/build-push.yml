@@ -2,7 +2,7 @@ name: build-push.yml
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, fix-gha-yes ]
 
 jobs:
   login:
@@ -21,6 +21,7 @@ jobs:
         uses: docker/build-push-action@v7
         with:
           push: true
-          tags: >
-            ${{ secrets.DOCKER_HUB_USERNAME }}/lulu:${{ github.event.pull_request.base.sha }},
-            ${{ secrets.DOCKER_HUB_USERNAME }}/lulu:prod
+          tags: |
+            ${{ secrets.DOCKER_HUB_USERNAME }}/hamct:lulu
+            ${{ secrets.DOCKER_HUB_USERNAME }}/hamct:test
+            ${{ secrets.DOCKER_HUB_USERNAME }}/hamct:${{ github.event.pull_request.base.sha }}
