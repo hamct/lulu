@@ -2,7 +2,7 @@
 FROM maven:3.9-eclipse-temurin-21 AS build
 WORKDIR /app
 COPY . .
-RUN mvn clean package -DskipTests
+RUN mvn clean package -DskipTests --no-transfer-progress --batch-mode
 
 # ---- Run stage ----
 FROM eclipse-temurin:21-jre
