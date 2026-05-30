@@ -1,6 +1,7 @@
 package party.cattery.lulu.command.base
 
 import party.cattery.lulu.command.CommandScope
+import party.cattery.lulu.command.ResponseVisibility
 
 import dev.kord.core.Kord
 import dev.kord.core.behavior.interaction.response.DeferredMessageInteractionResponseBehavior
@@ -21,6 +22,11 @@ abstract class MessageCommand : BaseCommand() {
     )
 
     final override suspend fun execute(event: ApplicationCommandInteractionCreateEvent) {
-        handle(event as MessageCommandInteractionCreateEvent, event.interaction.deferEphemeralResponse())
+        when (visibility) {
+            ResponseVisibility.PUBLIC ->
+                handle(event as MessageCommandInteractionCreateEvent, event.interaction.deferPublicResponse())
+            ResponseVisibility.EPHEMERAL ->
+                handle(event as MessageCommandInteractionCreateEvent, event.interaction.deferEphemeralResponse())
+        }
     }
 }

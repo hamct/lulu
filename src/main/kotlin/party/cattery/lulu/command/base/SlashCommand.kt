@@ -1,5 +1,7 @@
 package party.cattery.lulu.command.base
 
+import party.cattery.lulu.command.ResponseVisibility
+
 import dev.kord.core.Kord
 import dev.kord.core.behavior.interaction.response.DeferredMessageInteractionResponseBehavior
 import dev.kord.core.event.interaction.ApplicationCommandInteractionCreateEvent
@@ -20,7 +22,12 @@ abstract class SlashCommand : BaseCommand() {
     )
 
     final override suspend fun execute(event: ApplicationCommandInteractionCreateEvent) {
-        handle(event as ChatInputCommandInteractionCreateEvent, event.interaction.deferPublicResponse())
+        when (visibility) {
+            ResponseVisibility.PUBLIC ->
+                handle(event as ChatInputCommandInteractionCreateEvent, event.interaction.deferPublicResponse())
+            ResponseVisibility.EPHEMERAL ->
+                handle(event as ChatInputCommandInteractionCreateEvent, event.interaction.deferEphemeralResponse())
+        }
     }
 
     open fun ChatInputCreateBuilder.buildDefinition() { }

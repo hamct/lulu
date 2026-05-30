@@ -4,3 +4,8 @@ enum class CommandScope {
     GLOBAL,
     GUILD,
 }
+
+enum class ResponseVisibility {
+    PUBLIC,
+    EPHEMERAL,
+}

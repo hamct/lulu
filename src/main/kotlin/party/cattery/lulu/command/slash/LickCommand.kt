@@ -2,6 +2,7 @@ package party.cattery.lulu.command.slash
 
 import party.cattery.lulu.annotation.Command
 import party.cattery.lulu.command.CommandScope
+import party.cattery.lulu.command.ResponseVisibility
 import party.cattery.lulu.command.base.SlashCommand
 import party.cattery.lulu.presentation.LickResponse
 import party.cattery.lulu.service.LickService
@@ -21,6 +22,7 @@ class LickCommand(
     override val name = "lick"
     override val description = "Lick a user"
     override val scopes = setOf(CommandScope.GLOBAL)
+    override val visibility = ResponseVisibility.PUBLIC
 
     override fun ChatInputCreateBuilder.buildDefinition() {
         user("lickee", "User to lick") {
