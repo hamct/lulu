@@ -22,6 +22,6 @@ jobs:
         with:
           push: true
           tags: |
-            ${{ secrets.DOCKER_HUB_USERNAME }}/hamct:lulu
-            ${{ secrets.DOCKER_HUB_USERNAME }}/hamct:test
-            ${{ secrets.DOCKER_HUB_USERNAME }}/hamct:${{ github.event.pull_request.base.sha }}
+            ${{ vars.DOCKER_HUB_USERNAME }}/hamct:lulu
+            ${{ vars.DOCKER_HUB_USERNAME }}/hamct:test
+            ${{ vars.DOCKER_HUB_USERNAME }}/hamct:${{ github.event.pull_request.base.sha }}
